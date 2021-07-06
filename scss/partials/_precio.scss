@@ -1,0 +1,22 @@
+@use 'fuente';
+@use 'color';
+
+.precio{
+
+    font-weight: bolder;
+
+    &__anterior{
+
+        font-size: fuente.$size-p;
+        color: color.$red;
+        text-decoration: line-through;
+    }
+    &__actual{
+        padding: 10rem;
+        background-color: color.$white;
+        border-radius: 50%;
+        color: color.$teal;
+        font-size: fuente.$size-h1;
+      
+    }
+}
