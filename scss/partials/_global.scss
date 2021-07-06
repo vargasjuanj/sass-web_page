@@ -1,6 +1,6 @@
 @use 'color';
 @use 'fuente';
-@use 'container';
+
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
@@ -23,8 +23,6 @@ body {
     background-color: color.$primary
 }
 
-$limit: 10;
-$unit: 8px;
 
 a{
     color: color.$secondary;

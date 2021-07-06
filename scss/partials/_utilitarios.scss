@@ -1,0 +1,48 @@
+
+
+.row {
+    display: flex;
+    align-items: center;
+    .col {
+        inline-size: 50%;
+    }
+
+    .col-30 {
+        inline-size: 30%;
+    }
+
+    .col-70 {
+        inline-size: 70%;
+    }
+}
+
+.m-auto {
+    block-size: 0;
+    inline-size: auto;
+}
+
+
+$limit: 10;
+$unit: 8px;
+
+@for $i from 1 to $limit{
+    // Estilo dinamico
+    .m-#{$i}{
+        margin: $i * $unit;
+    }
+
+    .p-#{$i}{
+        padding: $i * $unit;
+    }
+
+    .py-#{$i}{
+        padding-block: $i * $unit;
+    }
+}
+
+@for $i from 1 to 4{
+    // Estilo dinamico
+    .w-#{$i}{
+       inline-size: $i * 25%;
+    }
+}

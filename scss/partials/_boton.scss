@@ -6,8 +6,9 @@
 @mixin color-boton($fondo, $texto: color.$dark, $bold: false) {
     color: $texto;
     background-color: $fondo;
-    
-    @if ($bold == 'true'){ // si es verdadero agrega la propiedad
+
+    @if ($bold == "true") {
+        // si es verdadero agrega la propiedad
         font-weight: bolder;
     }
 }
@@ -31,13 +32,18 @@
     }
 }
 
-
 .boton--principal {
-    @extend .boton;
-    @include color-boton (color.$terciary, color.$dark, 'true');
+    @include color-boton(color.$terciary, color.$grey, "true");
 }
 
 .boton--secundario {
-    @extend .boton;
     @include color-boton(color.$grey);
+}
+
+.boton--distinguido {
+    @include color-boton(color.$primary, color.$secondary, 'true');
+    &:hover {
+        @include color-boton(color.$secondary, color.$terciary, 'true');
+        box-sizing: efecto.$box-shadow;
+    }
 }
