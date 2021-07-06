@@ -1,0 +1,43 @@
+@use 'color';
+@use 'fuente';
+@use 'display';
+@use 'efecto';
+
+@mixin color-boton($fondo, $texto: color.$dark, $bold: false) {
+    color: $texto;
+    background-color: $fondo;
+    
+    @if ($bold == 'true'){ // si es verdadero agrega la propiedad
+        font-weight: bolder;
+    }
+}
+
+.boton {
+    border: none;
+    border-radius: 50rem;
+    padding-block: 10rem;
+    padding-inline: 15rem;
+    cursor: pointer;
+    font-size: fuente.$size-boton;
+    text-align: center;
+    // por si lleva alguna imagen
+    @include display.flex(space-around, center);
+
+    transition: transform 100ms;
+    &:hover {
+        @include color-boton(color.$secondary, color.$terciary);
+        box-shadow: efecto.$box-shadow;
+        transform: scale(1.1);
+    }
+}
+
+
+.boton--principal {
+    @extend .boton;
+    @include color-boton (color.$terciary, color.$dark, 'true');
+}
+
+.boton--secundario {
+    @extend .boton;
+    @include color-boton(color.$grey);
+}

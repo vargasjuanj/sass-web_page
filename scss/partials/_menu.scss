@@ -1,0 +1,17 @@
+
+@use 'display';
+
+.menu{
+
+    &__nav{
+        @include display.flex (space-between, center);
+    }
+    &__lista{
+        list-style: none;
+        display: flex;
+        gap: 20rem;
+    }
+    &__enlace{
+        color: red;
+    }
+}

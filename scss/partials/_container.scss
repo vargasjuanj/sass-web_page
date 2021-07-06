@@ -1,0 +1,13 @@
+@use 'color';
+
+.container{
+    margin-block: 100rem;
+    margin-inline: auto;
+    inline-size: 80%;
+    padding: 50rem;
+    box-shadow: 0 0 20rem 2rem rgba(0,0,0,0.1) ;
+    background-image: url(../../img/bg.jpg);
+
+    // para que no se repita la imagen
+    background-size: 100% 100%;
+}

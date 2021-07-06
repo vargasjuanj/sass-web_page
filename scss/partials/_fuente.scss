@@ -1,0 +1,52 @@
+@use 'color';
+
+// Mantiene un equilibrio, para pasar a una fuente más grande, multiplicar el ultimo font-size por la proporcion aure al igual que su line-heigh y asi...
+$proporcion-aurea: 1.618;
+
+// Principal
+$size: 6.25%; // generalmente se usa 62.5% que equivale a 10px, es decir 1rem=10px, pero si directamente fuera igual a 1px, el entendimiento sería mejor 
+$line-height: espacio-entre-lineas($size);
+$family: "Noto Sans JP", sans-serif;
+
+
+$size-p: 18rem;
+$line-height-p: espacio-entre-lineas($size-p);
+
+
+
+$size-h1: 30rem; // 30 px relativa
+$line-height-p: espacio-entre-lineas($size-h1);
+$size-h2: 24rem;
+$line-height-p: espacio-entre-lineas($size-h2);
+$size-h3: 20rem;
+$line-height-p: espacio-entre-lineas($size-h3);
+$size-boton: 14rem;
+$line-height-boton: espacio-entre-lineas($size-boton);
+
+
+
+p {
+    font-size: $size-p;
+    line-height: $line-height-p;
+    color: color.$grey;
+}
+
+h1 {
+    font-size: $size-h1;
+}
+
+h2 {
+    font-weight: bolder;
+    font-size: $size-h2;
+}
+
+h3 {
+    font-size: $size-h3;
+    // Letra más delgada
+    font-weight: lighter;
+}
+
+@function espacio-entre-lineas($font-size) {
+    $result: $font-size * $proporcion-aurea;
+    @return $result;
+}

@@ -1,0 +1,34 @@
+@use 'color';
+@use 'fuente';
+@use 'container';
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+
+html {
+    font-size: fuente.$size; // 1rem = 1px
+    line-height: fuente.$line-height;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: fuente.$family;
+    // background: url("../../img/fondo.png");
+    background-color: color.$primary
+}
+
+$limit: 10;
+$unit: 8px;
+
+a{
+    color: color.$secondary;
+    text-decoration: none;
+}
+
+
